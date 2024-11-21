@@ -5,31 +5,6 @@ exports.config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    // services: ['headspin'],
-    // hostname: "mtn-ng-los-0.headspin.io",
-    // port: 7016,
-    // // path: '/v0/' + 'a780428c6ff048ea9f48c0d308e07df4' + '/wd/hub',  // Replace with your identity key
-    // path: "/v0/" + 'a780428c6ff048ea9f48c0d308e07df4' + "/wd/hub",
-    baseUrl: 'https://mtn-ng-los-0.headspin.io:7016/v0/a780428c6ff048ea9f48c0d308e07df4/wd/hub',
-    udid: "RFCW212MZKE",
-
-    capabilities: [
-        {
-            platformName: 'Android',
-            browser: 'chrome',
-            deviceName: 'samsung SM-A336E', // Replace with actual device name
-            udid: "RFCW212MZKE",
-            automationName: 'UiAutomator2', // Use 'XCUITest' for iOS if needed
-            noReset: true,
-            acceptInsecureCerts: true,
-            unhandledPromptBehavior: 'ignore',
-            webSocketUrl: true,
-            appPackage: 'com.google.android.apps.messaging', // SMS app package
-            appActivity: 'com.google.android.apps.messaging.ui.ConversationListActivity'
-        }
-    ],
-
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -76,7 +51,8 @@ exports.config = {
     capabilities: [{
         browserName: 'chrome',
         'goog:chromeOptions': {
-            args: ['--window-size=1900,1100'],
+            args: ['--window-size=1900,1100', '--disable-blink-features=BiDi-CDP-Mapper'],
+            // args: ['--disable-blink-features=BiDi-CDP-Mapper']
         },
         acceptInsecureCerts: true
     }],

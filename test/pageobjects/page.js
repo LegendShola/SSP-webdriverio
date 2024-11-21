@@ -10,6 +10,6 @@ module.exports = class Page {
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     open () {
-        return browser.url(`https://testing-ssp.mtn.ng/login`)
+        return browser.url(`https://stage-sspbackoffice.mtn.ng/`)
     }
 }

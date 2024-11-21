@@ -1,4 +1,5 @@
-const loginPage = require('../pageobjects/login.page');
+const loginPage = require('../pageobjects/sspLogin.page');
+const loginPageBO = require('../pageobjects/backOfficeLogin.page');
 const otpPage = require('../pageobjects/otp.page');
 import headspinPage from '../pageobjects/headspin.page';
 const axios = require('axios');
@@ -14,6 +15,9 @@ describe('Login Test with OTP', () => {
         browser = await remote({
             capabilities: {
                 browserName: 'chrome',
+                'goog:chromeOptions': {
+                  args: ['--disable-blink-features=BiDi-CDP-Mapper']
+                }
             },
         });
 
@@ -27,13 +31,13 @@ describe('Login Test with OTP', () => {
 
     it('should login and validate OTP', async () => {
         // Navigate to Login Page and perform login
-        await loginPage.open();
-        await loginPage.login('Muhammed.oyewumi@mtn.com', 'CHudyGabriel@20');        
+        await loginPageBO.open();
+        await loginPageBO.login('Muhammed.oyewumi@mtn.com', 'CHudyGabriel@20');        
         // Retrieve OTP from HeadSpin
         const otp = await headspinPage.getOtp(); // Capture returned OTP
 
         // Switch back to local browser and enter the OTP
         await browser.switchToWindow((await browser.getWindowHandles())[0]);
-        await otpPage.enterOTP(otp);
+        await loginPageBO.enterOTP(otp);
     });
 });
