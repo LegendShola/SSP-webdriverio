@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.widget.TextView[@resource-id='com.google.android.apps.messaging:id/conversation_snippet' and contains(@text, 'Your SSP login token is')]"
+}

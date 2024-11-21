@@ -1,0 +1,31 @@
+{
+  "name": "ssp_wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badisi/wdio-harness": "^4.0.3",
+    "@testing-library/webdriverio": "^3.2.1",
+    "@wdio/allure-reporter": "^9.2.2",
+    "@wdio/appium-service": "^9.2.11",
+    "@wdio/cli": "^9.2.11",
+    "@wdio/junit-reporter": "^9.2.2",
+    "@wdio/local-runner": "^9.2.11",
+    "@wdio/mocha-framework": "^9.2.8",
+    "@wdio/visual-service": "^6.2.2",
+    "wdio-gmail-service": "^2.0.0",
+    "wdio-reportportal-service": "^7.3.1",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "dependencies": {
+    "ssp_wdio": "file:",
+    "webdriverio": "^8.39.0"
+  }
+}
