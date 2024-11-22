@@ -1,0 +1,11 @@
+{
+
+    "email": "muhammed.oyewumi@mtn.com",
+    "wrongEmail": "xyz@rise.com",
+    "invalidEmail": "xyz@risecom",
+    "password": "CHudyGabriel@20",
+    "sspUrl": "https://testing-ssp.mtn.ng/login",
+    "invalidDate": "23-04-0000",
+    "pastDate": "23-03-2023",
+    "msisdn": "09132059619"
+}

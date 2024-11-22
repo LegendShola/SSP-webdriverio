@@ -22,15 +22,19 @@ class LoginPage extends Page {
         return $("button[class='mt-3 w-full rounded-3xl bg-black py-2 font-medium text-white disabled:cursor-not-allowed disabled:bg-opacity-40']");
     }
     get otpInput() { 
-        return $(('(//input[contains(@type,"text")])[7]')); 
+        return $("(//input[contains(@type,'text')])[7]"); 
     }
     get verifyOTPButton() { 
-        return $(('(//button[normalize-space()="Verify"])[2]')); 
+        return $('(//button[normalize-space()="Verify"])[2]'); 
     }
   
     async enterOTP(otp) {
+        if (typeof otp !== 'string' || otp.trim() === '') {
+            throw new Error('Invalid OTP provided to enterOTP.');
+        }
         await this.otpInput.setValue(otp);
         await this.verifyOTPButton.click();
+        await browser.pause(10000);
     }
   
     async login(email, password) {
@@ -39,6 +43,7 @@ class LoginPage extends Page {
         await this.rememberMe.click();
         await this.termsOfUse.click();
         await this.submitButton.click();
+        await browser.pause(10000);
     }
 
     open () {

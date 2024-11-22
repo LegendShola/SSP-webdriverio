@@ -37,7 +37,7 @@ class LoginPage extends Page {
         await this.passwordInput.setValue(password);
         await this.policyAgreement.click();
         await this.continueButton.click();
-        await browser.pause(7000);
+        await browser.pause(5000);
     }
 
     open () {
